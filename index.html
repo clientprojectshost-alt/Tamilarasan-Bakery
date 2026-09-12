@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>The Best Tamilarasan Bakery — Menu</title>
+<style>
+  :root{
+    --wood-dark: #2c1c11;
+    --gold: #cc9a3e;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html, body{
+    margin: 0;
+    padding: 0;
+    background: var(--wood-dark);
+    height: 100%;
+  }
+
+  .page{
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .frame{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    overflow: hidden;
+  }
+
+  .frame img{
+    width: 100%;
+    height: auto;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    cursor: zoom-in;
+    transition: transform 0.25s ease;
+  }
+
+  .frame img.zoomed{
+    cursor: zoom-out;
+  }
+
+  .hint{
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.78rem;
+    color: var(--gold);
+    padding: 4px 16px 18px;
+    opacity: 0.85;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="frame" id="frame">
+    <img src="menu.jpg" alt="The Best Tamilarasan Bakery — Fresh Juices and Special menu" id="menuImg">
+  </div>
+  
+</div>
+
+<script>
+  const img = document.getElementById('menuImg');
+  let zoomed = false;
+  img.addEventListener('click', () => {
+    zoomed = !zoomed;
+    img.style.transform = zoomed ? 'scale(1.8)' : 'scale(1)';
+    img.classList.toggle('zoomed', zoomed);
+  });
+</script>
+</body>
+</html>
